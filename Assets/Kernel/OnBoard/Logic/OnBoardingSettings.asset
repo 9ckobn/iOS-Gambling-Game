@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5f5448c013808b4b887e38ef26c4468, type: 3}
+  m_Name: OnBoardingSettings
+  m_EditorClassIdentifier: 
+  screenInfos:
+  - h1: Step by Step
+    h2: Explore the map
+    h3: "Complete missions to\_progress in game. "
+    coreImage: {fileID: 21300000, guid: 2559228ae54fd2e4abaf0f346564029e, type: 3}
+  - h1: Careful
+    h2: Choose wisely
+    h3: "Select 1 of 3 blocks to step\_on. Only one is safe!"
+    coreImage: {fileID: 21300000, guid: ca77509eb0308ba48b788a4eafbbaec8, type: 3}
+  - h1: Equip
+    h2: Visit the shop
+    h3: "Buy items to progress in\_game"
+    coreImage: {fileID: 21300000, guid: 4742f848fe25a6449b3e5bfde2431a44, type: 3}
