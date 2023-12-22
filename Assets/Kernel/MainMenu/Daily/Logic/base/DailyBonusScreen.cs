@@ -1,14 +1,18 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DailyBonusScreen : MonoBehaviour
 {
     public int currentReward = 0;
 
-    [SerializeField] private BonusScreen firstScreen, rewardScreen, doubleRewardScreen;
+    [SerializeField] private BonusScreenBase firstScreen, rewardScreen, doubleRewardScreen;
     [SerializeField] private FinalScreen finalScreen;
+
+    [SerializeField] private Image blur;
 
     public void StartDailyBonusProcess()
     {
+        blur.enabled = true;
         firstScreen.SetupScreen(this);
     }
 
@@ -36,6 +40,7 @@ public class DailyBonusScreen : MonoBehaviour
     public async void CloseDailyBonus()
     {
         await finalScreen.CloseScreenWithAnimation();
+        blur.enabled = false;
         enabled = false;
     }
 }

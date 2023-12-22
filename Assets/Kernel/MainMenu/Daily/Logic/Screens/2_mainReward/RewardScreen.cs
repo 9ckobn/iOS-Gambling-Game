@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 
-public class RewardScreen : BonusScreen
+public class RewardScreen : BonusScreenBase
 {
     [SerializeField] private TextMeshProUGUI rewardTextMesh;
     [SerializeField] private Image mainRewardImage;

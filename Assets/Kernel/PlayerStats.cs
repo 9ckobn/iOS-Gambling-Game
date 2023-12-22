@@ -9,6 +9,9 @@ public static class PlayerStats
     private const string LastLoginKey = "LastLogin";
     public static bool FirstLoginToday { get => FetchLastLogin();}
 
+    private const string FirstEnterKey = "FirstEnter";
+    public static bool IsFirstEnter { get => PlayerPrefs.GetInt(FirstEnterKey) == 0; } 
+
     private static bool FetchLastLogin()
     {
         DateTime now = DateTime.Now;
@@ -23,5 +26,10 @@ public static class PlayerStats
         PlayerPrefs.SetString(LastLoginKey, now.ToString());
 
         return lastLogin.Date < now.Date;
+    }
+
+    public static void SetFirstEnter()
+    {
+        PlayerPrefs.SetInt(FirstEnterKey, 1);
     }
 }

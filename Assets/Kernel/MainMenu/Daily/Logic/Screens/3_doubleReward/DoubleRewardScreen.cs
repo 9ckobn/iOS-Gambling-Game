@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class DoubleRewardScreen : BonusScreen
+public class DoubleRewardScreen : BonusScreenBase
 {
     private DoubleChestElement neededChest;
     [SerializeField] private DoubleChestElement[] chestsArray = new DoubleChestElement[4];

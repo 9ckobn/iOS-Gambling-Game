@@ -1,4 +1,4 @@
-public class PrizeElement : BonusElement
+public class PrizeElement : ClickableElement
 {
     public int rewardAmount = 0;
 

@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Threading;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using TMPro;
@@ -10,26 +7,23 @@ using UnityEngine.UI;
 /// <summary>
 /// Abstract class that provide basic logic for all of bonus screens
 /// </summary>
-public abstract class BonusScreen : MonoBehaviour
+public abstract class UIScreen : MonoBehaviour
 {
     private Image[] allGraphicObjects;
-    [SerializeField] private TextMeshProUGUI[] additionalGraphicToFade;
+    private TextMeshProUGUI[] additionalGraphicToFade;
 
     private Color32 baseColor = new Color32(255, 255, 255, 0);
 
+
+    [SerializeField] private AnimationType animationType = AnimationType.Fade;
     [SerializeField] private float fadeDuration = 0.3f;
 
-    protected DailyBonusScreen ParentScreen;
-
-    public void SetupScreen(DailyBonusScreen dbs)
+    private void OnEnable() 
     {
-        ParentScreen = dbs;
-
         allGraphicObjects = GetComponentsInChildren<Image>();
+        additionalGraphicToFade = GetComponentsInChildren<TextMeshProUGUI>();
 
-        OpenWithAnimation();
-        
-        StartScreen();
+        OpenScreen();
     }
 
     public abstract void StartScreen();
@@ -76,16 +70,37 @@ public abstract class BonusScreen : MonoBehaviour
     }
 
 
-    private void OpenWithAnimation()
+    private void OpenScreen()
     {
         gameObject.SetActive(true);
 
+        switch (animationType)
+        {
+            case AnimationType.Fade:
+                FadeInAnimation();
+                break;
+            case AnimationType.None:
+                break;
+        }
+    }
+
+    private void FadeInAnimation()
+    {
         foreach (var item in allGraphicObjects)
         {
             item.color = baseColor;
             item.DOFade(1, fadeDuration);  
         }
+
+        foreach (var item in additionalGraphicToFade)
+        {
+            item.DOFade(1, fadeDuration);
+        }
     }
+}
 
-
+public enum AnimationType
+{
+    Fade,
+    None
 }

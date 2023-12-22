@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class FinalScreen : BonusScreen
+public class FinalScreen : BonusScreenBase
 {
     [SerializeField] private Image targetWindow;
     [SerializeField] private Sprite doubledWindow, defaultWindow;

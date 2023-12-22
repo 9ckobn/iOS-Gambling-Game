@@ -8,9 +8,9 @@ using DG.Tweening;
 [RequireComponent(typeof(Image))]
 /// <summary>
 /// Abstract class that provide basic IPointerClick interface
-/// Basically need to work with clickable elements in bonus screens
+/// Basically need to work with clickable elements in screens
 /// </summary>
-public abstract class BonusElement : MonoBehaviour, IBonusElement
+public abstract class ClickableElement : MonoBehaviour, IClickableElement
 {
     protected Image targetGraphic;
 
@@ -18,7 +18,6 @@ public abstract class BonusElement : MonoBehaviour, IBonusElement
     private const float animationDuration = 0.05f;
 
     public Action OnClick;
-
 
     private void OnEnable()
     {

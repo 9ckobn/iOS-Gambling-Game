@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DoubleChestElement : BonusElement
+public class DoubleChestElement : ClickableElement
 {
     [SerializeField] private Sprite rewardChest, missChest;
     [SerializeField] private Color32 nonInteractableColor = Color.gray; 
