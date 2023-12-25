@@ -6,7 +6,8 @@ public class MenuInstaller : MonoInstaller
 {
     [SerializeField] private DailyBonusScreen dailyBonusScreen;
 
-    [SerializeField] private MainMenuScreen mainMenuScreen; 
+    [SerializeField] private MainMenuScreen mainMenuScreen;
+    [SerializeField] private DefaultNotification notificationScreen;
 
     public override async void InstallBindings()
     {
@@ -31,6 +32,7 @@ public class MenuInstaller : MonoInstaller
     {
         Container.Bind<MainMenuScreen>().FromInstance(mainMenuScreen).AsSingle();
         Container.Bind<MainMenuHandler>().FromNewComponentOn(gameObject).AsSingle().NonLazy();
+        
         mainMenuScreen.StartScreen();
     }
 
@@ -38,7 +40,9 @@ public class MenuInstaller : MonoInstaller
     {
         if (PlayerStats.IsFirstEnter)
         {
-            mainMenuScreen.ShowRules();
+            notificationScreen.SetupMainLayout();
+            notificationScreen.SetupScreenForRules();
+            PlayerStats.SetFirstEnter();
         }
     }
 }

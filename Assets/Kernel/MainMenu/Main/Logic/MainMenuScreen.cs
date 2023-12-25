@@ -12,13 +12,8 @@ public class MainMenuScreen : UIScreen, IMenuItem
 
     private void SetupBasicElements()
     {
+        
         footerArea.StartScreen();
         headerArea.StartScreen();
-    }
-
-    public void ShowRules()
-    {
-        rulesScreen.StartScreen();
-        PlayerStats.SetFirstEnter();
     }
 }

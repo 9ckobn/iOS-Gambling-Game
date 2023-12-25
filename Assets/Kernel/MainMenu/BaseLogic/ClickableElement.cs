@@ -4,29 +4,30 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using DG.Tweening;
 
-
-[RequireComponent(typeof(Image))]
 /// <summary>
 /// Abstract class that provide basic IPointerClick interface
 /// Basically need to work with clickable elements in screens
 /// </summary>
 public abstract class ClickableElement : MonoBehaviour, IClickableElement
 {
-    protected Image targetGraphic;
+    [SerializeField] protected Image targetGraphic;
 
-    private const float animationModifier = 1.1f;
+    private const float animationModifier = 1.05f;
     private const float animationDuration = 0.05f;
 
     public Action OnClick;
 
-    private void OnEnable()
+    private void Start() 
     {
         OnClick += OnClickAnimation;
+    }
+
+    private void OnEnable()
+    {
 
         if (targetGraphic == null)
             targetGraphic = GetComponent<Image>();
     }
-
 
     private void OnDestroy()
     {

@@ -12,31 +12,25 @@ public class TabSelector : MonoBehaviour
 
     public void SetupTabs()
     {
-        SetStartScreen();
-        
         foreach (var item in tabScreenPairs)
         {
+            item.tabButton.MainSelector = this;
             item.tabButton.OnClick += () => OpenScreen(item);
         }
     }
-    
+
     private void OpenScreen(TabScreenPair tabScreen)
     {
         ClearUI();
-        tabScreen.screen.StartScreen();
+        tabScreen.tabButton.SetupCurrentScreen();
     }
 
     private void ClearUI()
     {
         foreach (var item in tabScreenPairs)
         {
-            item.screen.CloseScreen();
+            item.tabButton.CloseCurrentScreen();
         }
-    }   
-
-    private void SetStartScreen()
-    {
-        tabScreenPairs[0].screen.StartScreen();
     }
 }
 

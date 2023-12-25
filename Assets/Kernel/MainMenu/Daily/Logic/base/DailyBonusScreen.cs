@@ -42,5 +42,7 @@ public class DailyBonusScreen : MonoBehaviour
         await finalScreen.CloseScreenWithAnimation();
         blur.enabled = false;
         enabled = false;
+
+        Debug.Log($"player money = {PlayerStats.MoneyCount}");
     }
 }

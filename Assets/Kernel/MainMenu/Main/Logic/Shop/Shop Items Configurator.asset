@@ -1,0 +1,136 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3cb342cc7559524b9bf61a9f59fa97a, type: 3}
+  m_Name: Shop Items Configurator
+  m_EditorClassIdentifier: 
+  shopElementObject: {fileID: 7508227327482493485, guid: c1a96bc0478cfae478c7939ee8b57081, type: 3}
+  allItems:
+  - FullImage: {fileID: 0}
+    MiniImage: {fileID: 21300000, guid: 36129ce5f53a54645a414ca693f96ff4, type: 3}
+    Name: Rusty stick
+    Price: 120
+  - FullImage: {fileID: 0}
+    MiniImage: {fileID: 21300000, guid: d4aa3451361c0dd47b0af11c06e320b3, type: 3}
+    Name: Axe Attacks
+    Price: 300
+  - FullImage: {fileID: 0}
+    MiniImage: {fileID: 21300000, guid: 9eddefcd56549c04ca2278f556344dd2, type: 3}
+    Name: Sledgehammer
+    Price: 500
+  - FullImage: {fileID: 0}
+    MiniImage: {fileID: 21300000, guid: da51255804953094c889ca10a71d1a6b, type: 3}
+    Name: Damage stick
+    Price: 700
+  - FullImage: {fileID: 0}
+    MiniImage: {fileID: 21300000, guid: 45d4dc8f525eac348b425ad554b03ae6, type: 3}
+    Name: Pickaxe
+    Price: 900
+  - FullImage: {fileID: 0}
+    MiniImage: {fileID: 21300000, guid: f94e23657333355498225b13c41ccd84, type: 3}
+    Name: Mjolnir
+    Price: 100
+  - FullImage: {fileID: 0}
+    MiniImage: {fileID: 21300000, guid: 045b10ad8446f3d4eb11e37c7220d0e9, type: 3}
+    Name: Spear
+    Price: 100
+  - FullImage: {fileID: 0}
+    MiniImage: {fileID: 21300000, guid: ece4e7d4a06f8574aacb0a843d29d77b, type: 3}
+    Name: 'Staff '
+    Price: 100
+  - FullImage: {fileID: 0}
+    MiniImage: {fileID: 21300000, guid: dcfb776ceec2aa848bbdb6cdcdfaca2b, type: 3}
+    Name: Sword Art
+    Price: 100
+  - FullImage: {fileID: 0}
+    MiniImage: {fileID: 21300000, guid: e7ee0c4fb7c09e34db17a68ad689191f, type: 3}
+    Name: Longbow
+    Price: 100
+  - FullImage: {fileID: 0}
+    MiniImage: {fileID: 21300000, guid: 1bed750ddbf78e34aa819797311fbf5c, type: 3}
+    Name: Bow of wind
+    Price: 100
+  - FullImage: {fileID: 0}
+    MiniImage: {fileID: 21300000, guid: aaa64fcdf9afda041a71f6f79942b75c, type: 3}
+    Name: Yatagan
+    Price: 100
+  - FullImage: {fileID: 0}
+    MiniImage: {fileID: 21300000, guid: 4ec09e341fbb2e14f82c40651c959f9c, type: 3}
+    Name: UltraBow
+    Price: 100
+  - FullImage: {fileID: 0}
+    MiniImage: {fileID: 21300000, guid: 0e82285723302b846a27de07f647e698, type: 3}
+    Name: Crusher
+    Price: 100
+  - FullImage: {fileID: 0}
+    MiniImage: {fileID: 21300000, guid: df7da174cdd1f3441b2281fc214bfd2d, type: 3}
+    Name: Battle axe
+    Price: 100
+  - FullImage: {fileID: 0}
+    MiniImage: {fileID: 21300000, guid: 24e382126c272a24a8fb4f1a001ff707, type: 3}
+    Name: Great spear
+    Price: 100
+  - FullImage: {fileID: 0}
+    MiniImage: {fileID: 21300000, guid: 97b80efa9d7505344907971f8efd2dac, type: 3}
+    Name: Keyblade
+    Price: 100
+  - FullImage: {fileID: 0}
+    MiniImage: {fileID: 21300000, guid: eaf6ef1c6c233a542a7526a96f72ff96, type: 3}
+    Name: Magic Wand
+    Price: 100
+  - FullImage: {fileID: 0}
+    MiniImage: {fileID: 21300000, guid: 364d14f4c7d69564ba1fd6daf09c33c1, type: 3}
+    Name: New Map
+    Price: 100
+  - FullImage: {fileID: 0}
+    MiniImage: {fileID: 21300000, guid: 1a65963cdce5e5548ab8fd17be4eafa0, type: 3}
+    Name: New Map
+    Price: 100
+  - FullImage: {fileID: 0}
+    MiniImage: {fileID: 21300000, guid: 46c9ca6a34440ce459dff0c0bb48e007, type: 3}
+    Name: New Map
+    Price: 100
+  - FullImage: {fileID: 0}
+    MiniImage: {fileID: 21300000, guid: daa39c861ecb8ca4181029ed91caefaf, type: 3}
+    Name: New Map
+    Price: 100
+  - FullImage: {fileID: 0}
+    MiniImage: {fileID: 21300000, guid: 0a17f12fbf59c754a9aca51df62d2fe5, type: 3}
+    Name: New Map
+    Price: 100
+  - FullImage: {fileID: 0}
+    MiniImage: {fileID: 21300000, guid: a29fc0fb4610c26449317696c2c90110, type: 3}
+    Name: New Map
+    Price: 100
+  - FullImage: {fileID: 0}
+    MiniImage: {fileID: 21300000, guid: 5852d93184cb4944dab066129cf7dde4, type: 3}
+    Name: New character
+    Price: 100
+  - FullImage: {fileID: 0}
+    MiniImage: {fileID: 21300000, guid: 2e001f3b2e745154db03430024dd11de, type: 3}
+    Name: New character
+    Price: 100
+  - FullImage: {fileID: 0}
+    MiniImage: {fileID: 21300000, guid: fcf12edc83c5d7144958a55907cb9bb7, type: 3}
+    Name: New character
+    Price: 100
+  - FullImage: {fileID: 0}
+    MiniImage: {fileID: 21300000, guid: c38e0117dfcfbf3458463487c430a884, type: 3}
+    Name: New character
+    Price: 100
+  - FullImage: {fileID: 0}
+    MiniImage: {fileID: 21300000, guid: 35b3b919391985f4abcd3b510e7ead74, type: 3}
+    Name: New character
+    Price: 100
+  - FullImage: {fileID: 0}
+    MiniImage: {fileID: 21300000, guid: bf6abe890a4f46743962e6a04bb9b537, type: 3}
+    Name: New character
+    Price: 100

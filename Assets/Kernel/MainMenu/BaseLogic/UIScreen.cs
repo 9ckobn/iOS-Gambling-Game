@@ -14,21 +14,23 @@ public abstract class UIScreen : MonoBehaviour
 
     private Color32 baseColor = new Color32(255, 255, 255, 0);
 
-
     [SerializeField] private AnimationType animationType = AnimationType.Fade;
     [SerializeField] private float fadeDuration = 0.3f;
 
-    private void OnEnable() 
+    private void OnEnable()
     {
-        allGraphicObjects = GetComponentsInChildren<Image>();
-        additionalGraphicToFade = GetComponentsInChildren<TextMeshProUGUI>();
+        if (animationType != AnimationType.None)
+        {
+            allGraphicObjects = GetComponentsInChildren<Image>();
+            additionalGraphicToFade = GetComponentsInChildren<TextMeshProUGUI>();
+        }
 
         OpenScreen();
     }
 
     public abstract void StartScreen();
 
-    public void CloseScreen()
+    public virtual void CloseScreen()
     {
         gameObject.SetActive(false);
     }
@@ -38,7 +40,7 @@ public abstract class UIScreen : MonoBehaviour
         foreach (var item in allGraphicObjects)
         {
             item.DOFade(0, fadeDuration);
-        }        
+        }
 
         foreach (var item in additionalGraphicToFade)
         {
@@ -72,8 +74,6 @@ public abstract class UIScreen : MonoBehaviour
 
     private void OpenScreen()
     {
-        gameObject.SetActive(true);
-
         switch (animationType)
         {
             case AnimationType.Fade:
@@ -89,7 +89,7 @@ public abstract class UIScreen : MonoBehaviour
         foreach (var item in allGraphicObjects)
         {
             item.color = baseColor;
-            item.DOFade(1, fadeDuration);  
+            item.DOFade(1, fadeDuration);
         }
 
         foreach (var item in additionalGraphicToFade)

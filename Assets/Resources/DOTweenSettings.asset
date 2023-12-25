@@ -23,10 +23,10 @@ MonoBehaviour:
   rewindCallbackMode: 0
   showUnityEditorReport: 0
   logBehaviour: 0
-  drawGizmos: 1
+  drawGizmos: 0
   defaultRecyclable: 1
   defaultAutoPlay: 2
-  defaultUpdateType: 0
+  defaultUpdateType: 1
   defaultTimeScaleIndependent: 0
   defaultEaseType: 6
   defaultEaseOvershootOrAmplitude: 1.70158
