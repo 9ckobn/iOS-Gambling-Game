@@ -13,6 +13,7 @@ public class SettingsHandler : UIScreen
 
     [SerializeField] private Texture2D shareImage;
     private NativeShare nativeShareInstance;
+    private WebViewObject webViewObject;
 
     private const string notificationKey = "notifs";
     private bool notificationsEnabled
@@ -65,9 +66,10 @@ public class SettingsHandler : UIScreen
     private void SetupButtons()
     {
         notification.onClick.AddListener(SwitchNotifications);
-        privacy.onClick.AddListener(() => Application.OpenURL(privacyUrl));
-        terms.onClick.AddListener(() => Application.OpenURL(termsUrl));
+        privacy.onClick.AddListener(() => OpenWebView(privacyUrl));
+        terms.onClick.AddListener(() => OpenWebView(termsUrl));
         report.onClick.AddListener(() => reportScreen.StartScreen());
+        support.onClick.AddListener(() => reportScreen.StartScreen());
         share.onClick.AddListener(ShareApp);
         rate.onClick.AddListener(() => Device.RequestStoreReview());
     }
@@ -82,6 +84,30 @@ public class SettingsHandler : UIScreen
         {
             nativeShareInstance.Share();
         }
+    }
+
+    private void OpenWebView(string URL)
+    {
+        webViewObject = (new GameObject("WebView")).AddComponent<WebViewObject>();
+        webViewObject.Init(
+            err: (msg) =>
+            {
+                Debug.Log($"Error: {msg}");
+                Disable();
+            },
+            httpErr: (msg) =>
+            {
+                Debug.Log($"HttpError: {msg}");
+                Disable();
+            });
+
+        webViewObject.LoadURL(URL);
+        webViewObject.SetVisibility(true);
+    }
+
+    private void Disable()
+    {
+        Destroy(webViewObject.gameObject);
     }
 
     private void SwitchNotifications() => notificationsEnabled = !notificationsEnabled;
