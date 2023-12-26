@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class DefaultNotification : UIScreen
 {
-	[SerializeField] private MainButton closeButton, mainButton;
+	[SerializeField] private NotificationButton closeButton, mainButton;
 	[SerializeField] private ShopElementObjectFull shopScreenLayout;
 	[SerializeField] private MainNotificationLayout mainNotificationLayout;
 	[SerializeField] private Image blur;
@@ -53,6 +53,7 @@ public class DefaultNotification : UIScreen
 		mainButton.ChangeText("Purchased");
 		shopScreenLayout.PurchaseItem();
 		shopScreenSetted = true;
+		mainButton.OnClick = null;
 	}
 
 	public void SetupScreenForRules()

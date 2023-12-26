@@ -1,16 +1,30 @@
 using System;
 using UnityEngine;
 
-public static class PlayerStats
+public class PlayerStats
 {
+    private static Header _header;
+
+    public PlayerStats(Header header)
+    {
+        _header = header;
+    }
+
     private const string MoneyCountKey = "Money";
-    public static int MoneyCount { get => PlayerPrefs.GetInt(MoneyCountKey, 0); set => PlayerPrefs.SetInt(MoneyCountKey, value); }
+    public static int MoneyCount
+    {
+        get => PlayerPrefs.GetInt(MoneyCountKey, 0); set
+        {
+            PlayerPrefs.SetInt(MoneyCountKey, value);
+            _header.UpdateMoneyCount();
+        }
+    }
 
     private const string LastLoginKey = "LastLogin";
-    public static bool FirstLoginToday { get => FetchLastLogin();}
+    public static bool FirstLoginToday { get => FetchLastLogin(); }
 
     private const string FirstEnterKey = "FirstEnter";
-    public static bool IsFirstEnter { get => PlayerPrefs.GetInt(FirstEnterKey) == 0; } 
+    public static bool IsFirstEnter { get => PlayerPrefs.GetInt(FirstEnterKey) == 0; }
 
     private static bool FetchLastLogin()
     {

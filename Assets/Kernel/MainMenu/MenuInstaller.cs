@@ -5,12 +5,14 @@ using Zenject;
 public class MenuInstaller : MonoInstaller
 {
     [SerializeField] private DailyBonusScreen dailyBonusScreen;
-
     [SerializeField] private MainMenuScreen mainMenuScreen;
     [SerializeField] private DefaultNotification notificationScreen;
+    [SerializeField] private Header header;
 
     public override async void InstallBindings()
     {
+        SetupPlayerStats();
+        SetupHeader();
         SetupMenu();
         await CheckDaily();
         await CheckRules();
@@ -18,7 +20,7 @@ public class MenuInstaller : MonoInstaller
 
     private async UniTask CheckDaily()
     {
-        if(PlayerStats.FirstLoginToday)
+        if (PlayerStats.FirstLoginToday)
         {
             Container.Bind<DailyBonusScreen>().FromInstance(dailyBonusScreen).AsSingle();
 
@@ -32,8 +34,19 @@ public class MenuInstaller : MonoInstaller
     {
         Container.Bind<MainMenuScreen>().FromInstance(mainMenuScreen).AsSingle();
         Container.Bind<MainMenuHandler>().FromNewComponentOn(gameObject).AsSingle().NonLazy();
-        
+
         mainMenuScreen.StartScreen();
+    }
+
+    private void SetupHeader()
+    {
+        header.UpdateMoneyCount();
+        header.StartScreen();
+    }
+
+    private void SetupPlayerStats()
+    {
+        PlayerStats playerStats = new PlayerStats(header);
     }
 
     private async UniTask CheckRules()
