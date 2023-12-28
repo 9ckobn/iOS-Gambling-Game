@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class RulesScreen : UIScreen
-{    
+{
     [SerializeField] private MainButton[] mainButtons = new MainButton[2];
 
     public override void StartScreen()
@@ -10,6 +10,6 @@ public class RulesScreen : UIScreen
 
         gameObject.SetActive(true);
 
-        foreach (var item in mainButtons) item.OnClick += ()=> CloseScreenWithAnimation();
+        foreach (var item in mainButtons) item.OnClick += () => CloseScreenWithAnimation();
     }
 }

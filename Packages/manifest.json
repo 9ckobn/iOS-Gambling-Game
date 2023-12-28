@@ -1,18 +1,23 @@
 {
   "dependencies": {
     "com.coffee.softmask-for-ugui": "https://github.com/mob-sakai/SoftMaskForUGUI.git",
-    "net.gree.unity-webview": "https://github.com/gree/unity-webview.git?path=/dist/package",
+    "com.onesignal.unity.android": "5.0.5",
+    "com.onesignal.unity.core": "5.0.5",
+    "com.onesignal.unity.ios": "5.0.5",
     "com.unity.2d.sprite": "1.0.0",
+    "com.unity.ads": "4.4.2",
     "com.unity.collab-proxy": "2.1.0",
     "com.unity.feature.development": "1.0.1",
     "com.unity.ide.rider": "3.0.25",
     "com.unity.ide.visualstudio": "2.0.21",
     "com.unity.ide.vscode": "1.2.5",
+    "com.unity.recorder": "3.0.3",
     "com.unity.test-framework": "1.1.33",
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.timeline": "1.6.5",
     "com.unity.ugui": "1.0.0",
     "com.unity.visualscripting": "1.9.1",
+    "net.gree.unity-webview": "https://github.com/gree/unity-webview.git?path=/dist/package",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",
@@ -44,5 +49,14 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
-  }
+  },
+  "scopedRegistries": [
+    {
+      "name": "npmjs",
+      "url": "https://registry.npmjs.org",
+      "scopes": [
+        "com.onesignal"
+      ]
+    }
+  ]
 }

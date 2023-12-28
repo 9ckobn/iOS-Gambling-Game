@@ -33,7 +33,7 @@ public class ShopHandler : UIScreen
 
     public override void CloseScreen()
     {
-        if(alreadyCreated)
+        if (alreadyCreated)
             foreach (var item in allElements)
             {
                 item.DisableElement();
@@ -61,7 +61,7 @@ public class ShopHandler : UIScreen
 
             if (!item.isPurchased)
             {
-                shopGameObject.OnClick += () => fullElementScreen.SetupScreenForShop(shopGameObject) ;
+                shopGameObject.OnClick += () => fullElementScreen.SetupScreenForShop(shopGameObject);
             }
         }
 

@@ -10,7 +10,7 @@ public class TabBase : ClickableElement
 
     void Start()
     {
-        if(defaultSprite == null)
+        if (defaultSprite == null)
             defaultSprite = targetGraphic.sprite;
     }
 

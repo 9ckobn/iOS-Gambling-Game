@@ -1,9 +1,10 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Advertisements;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class OnBoardingHandler : MonoBehaviour
+public class OnBoardingHandler : MonoBehaviour, IUnityAdsShowListener
 {
     [SerializeField] private OnBoardingSettings settings;
 
@@ -22,13 +23,12 @@ public class OnBoardingHandler : MonoBehaviour
 
     public void NextScreen()
     {
-        if(_index >= 3)
+        if (_index >= 3)
         {
-            var sceneTask = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+            Advertisement.Show("Interstitial_iOS", this);
 
             return;
         }
-        
 
         SetScreen(_index);
         _index++;
@@ -41,5 +41,28 @@ public class OnBoardingHandler : MonoBehaviour
         h3.text = settings.screenInfos[index].h3;
 
         baseImage.sprite = settings.screenInfos[index].coreImage;
+    }
+
+    public void OnUnityAdsShowFailure(string placementId, UnityAdsShowError error, string message)
+    {
+        Debug.Log($"Cannot play Ad now {message}");
+        var sceneTask = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void OnUnityAdsShowStart(string placementId)
+    {
+        Debug.Log("Ad Started");
+        //throw new System.NotImplementedException();
+    }
+
+    public void OnUnityAdsShowClick(string placementId)
+    {
+        //throw new System.NotImplementedException();
+    }
+
+    public void OnUnityAdsShowComplete(string placementId, UnityAdsShowCompletionState showCompletionState)
+    {
+        Debug.Log("Ad complete");
+        var sceneTask = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

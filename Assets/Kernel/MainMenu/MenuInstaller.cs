@@ -16,6 +16,8 @@ public class MenuInstaller : MonoInstaller
         SetupMenu();
         await CheckDaily();
         await CheckRules();
+
+        DefaultNotification.instance = notificationScreen;
     }
 
     private async UniTask CheckDaily()

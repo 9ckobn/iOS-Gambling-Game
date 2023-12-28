@@ -12,19 +12,20 @@ public abstract class ClickableElement : MonoBehaviour, IClickableElement
 {
     [SerializeField] protected Image targetGraphic;
 
+    protected bool needToAnimate = true;
+
     private const float animationModifier = 1.05f;
     private const float animationDuration = 0.05f;
 
     public Action OnClick;
 
-    private void Start() 
+    private void Start()
     {
-        OnClick += OnClickAnimation;
+        if (needToAnimate) OnClick += OnClickAnimation;
     }
 
     private void OnEnable()
     {
-
         if (targetGraphic == null)
             targetGraphic = GetComponent<Image>();
     }

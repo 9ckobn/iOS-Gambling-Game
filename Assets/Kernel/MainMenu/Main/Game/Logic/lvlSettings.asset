@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd9885baa54bc3248a62add5ae421e61, type: 3}
+  m_Name: lvlSettings
+  m_EditorClassIdentifier: 
+  lvlList:
+  - index: 1
+    stepsCount: 20
+    lvlPrefab: {fileID: 8900473416142398535, guid: 9936523c928bfd24a85ab0894d016a67, type: 3}
+  - index: 2
+    stepsCount: 40
+    lvlPrefab: {fileID: 8900473416142398535, guid: 9936523c928bfd24a85ab0894d016a67, type: 3}
+  - index: 3
+    stepsCount: 60
+    lvlPrefab: {fileID: 8900473416142398535, guid: 9936523c928bfd24a85ab0894d016a67, type: 3}
+  - index: 4
+    stepsCount: 80
+    lvlPrefab: {fileID: 8900473416142398535, guid: 9936523c928bfd24a85ab0894d016a67, type: 3}
+  - index: 5
+    stepsCount: 100
+    lvlPrefab: {fileID: 8900473416142398535, guid: 9936523c928bfd24a85ab0894d016a67, type: 3}

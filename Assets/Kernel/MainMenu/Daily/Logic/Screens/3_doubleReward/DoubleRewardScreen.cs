@@ -16,9 +16,9 @@ public class DoubleRewardScreen : BonusScreenBase
 
         chestsArray[randomIndex].trueChest = true;
 
-        foreach(var item in chestsArray)
+        foreach (var item in chestsArray)
         {
-            if(item.trueChest)
+            if (item.trueChest)
             {
                 item.OnClick += SetupReward;
             }
@@ -31,7 +31,7 @@ public class DoubleRewardScreen : BonusScreenBase
 
     private void DisableChests()
     {
-        foreach(var item in chestsArray)
+        foreach (var item in chestsArray)
         {
             item.SetInteractivity();
         }

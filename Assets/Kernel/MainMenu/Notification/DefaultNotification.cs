@@ -17,6 +17,8 @@ public class DefaultNotification : UIScreen
 
 	private bool shopScreenSetted = false;
 
+	public static DefaultNotification instance;
+
 	public void SetupScreenForShop(ShopElementObject element)
 	{
 		blur.enabled = true;
@@ -60,6 +62,75 @@ public class DefaultNotification : UIScreen
 	{
 		shopScreenLayout.gameObject.SetActive(false);
 		mainNotificationLayout.SetupText(NotificationTextType.rules);
+
+		mainButton.OnClick = async () =>
+		{
+			CloseScreenWithAnimation();
+		};
+
+		closeButton.OnClick = async () =>
+{
+	CloseScreenWithAnimation();
+
+};
+
+		StartScreen();
+	}
+
+
+	public void SetupScreenForWin(UIScreen screenToDisable)
+	{
+		shopScreenLayout.gameObject.SetActive(false);
+		mainNotificationLayout.SetupText(NotificationTextType.win);
+		mainButton.OnClick += async () =>
+		{
+			CloseScreenWithAnimation();
+			await screenToDisable.CloseScreenWithAnimation();
+		};
+
+		closeButton.OnClick += async () =>
+{
+	CloseScreenWithAnimation();
+	await screenToDisable.CloseScreenWithAnimation();
+};
+		StartScreen();
+	}
+
+
+	public void SetupScreenForLose(UIScreen screenToDisable)
+	{
+		shopScreenLayout.gameObject.SetActive(false);
+		mainNotificationLayout.SetupText(NotificationTextType.lose);
+		mainButton.OnClick += async () =>
+		{
+			CloseScreenWithAnimation();
+			await screenToDisable.CloseScreenWithAnimation();
+		};
+
+		closeButton.OnClick += async () =>
+{
+	CloseScreenWithAnimation();
+	await screenToDisable.CloseScreenWithAnimation();
+};
+		StartScreen();
+	}
+
+
+	public void SetupScreenForExit(UIScreen screenToDisable)
+	{
+		shopScreenLayout.gameObject.SetActive(false);
+		mainNotificationLayout.SetupText(NotificationTextType.exit);
+		mainButton.OnClick += async () =>
+		{
+			CloseScreenWithAnimation();
+			await screenToDisable.CloseScreenWithAnimation();
+		};
+
+		closeButton.OnClick += async () =>
+{
+	CloseScreenWithAnimation();
+	await screenToDisable.CloseScreenWithAnimation();
+};
 		StartScreen();
 	}
 
