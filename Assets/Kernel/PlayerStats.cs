@@ -11,9 +11,12 @@ public class PlayerStats
     }
 
     private const string MoneyCountKey = "Money";
+
     public static int MoneyCount
     {
-        get => PlayerPrefs.GetInt(MoneyCountKey, 0); set
+        get => PlayerPrefs.GetInt(MoneyCountKey, 0); 
+
+        set
         {
             PlayerPrefs.SetInt(MoneyCountKey, value);
             _header.UpdateMoneyCount();
