@@ -25,6 +25,8 @@ public class BootStrap : MonoInstaller, IUnityAdsInitializationListener
 
         Application.targetFrameRate = 60;
 
+        SetupOneSignalSDK();
+        
         SetupAd();
 
         sceneTask = SceneManager.LoadSceneAsync(PlayerStats.IsFirstEnter ? OnBoardSceneIndex : MainMenuSceneIndex);
